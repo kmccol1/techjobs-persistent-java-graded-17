@@ -58,6 +58,7 @@ public class EmployerController
     {
         model.addAttribute("title", "All Employers?");
         model.addAttribute("jobs", employerRepository.findAll());
+        model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
 }
