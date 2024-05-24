@@ -55,7 +55,7 @@ public class SkillController
 
     }
 
-    @GetMapping("/skills")
+    @GetMapping("/")
     public String index(Model model)
     {
         model.addAttribute("title", "All Skillz?");
