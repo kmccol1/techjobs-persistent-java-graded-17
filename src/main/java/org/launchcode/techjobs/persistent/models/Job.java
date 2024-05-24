@@ -1,9 +1,7 @@
 package org.launchcode.techjobs.persistent.models;
 
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 
 import java.util.List;
 
@@ -11,8 +9,9 @@ import java.util.List;
 public class Job {
 
     @Id
-    @GeneratedValue
-    private int id;
+    @SequenceGenerator(name="job_seq", sequenceName = "job_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "job_seq")
+    private Integer id;
 
     private String name;
     private String employer;
