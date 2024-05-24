@@ -2,6 +2,7 @@ package org.launchcode.techjobs.persistent.models;
 
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
@@ -15,6 +16,8 @@ public abstract class AbstractEntity
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "abstractentity_seq")
     private int id;
 
+    @NotBlank(message="Name field cannot be blank! Please try again.")
+    @Size(max=128)
     private String name;
 
     public int getId() {
