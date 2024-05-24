@@ -1,17 +1,18 @@
 package org.launchcode.techjobs.persistent.models;
 
 
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.Id;
-import jakarta.persistence.MappedSuperclass;
+import jakarta.persistence.*;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 
 import java.util.Objects;
 
 @MappedSuperclass
-public abstract class AbstractEntity {
-
+public abstract class AbstractEntity
+{
+    @Id
+    @SequenceGenerator(name="abstractentity_seq", sequenceName = "abstractentity_seq", allocationSize = 1)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "abstractentity_seq")
     private int id;
 
     private String name;
