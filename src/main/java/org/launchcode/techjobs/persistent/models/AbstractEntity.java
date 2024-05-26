@@ -14,7 +14,7 @@ public abstract class AbstractEntity
     @Id
     @SequenceGenerator(name="abstractentity_seq", sequenceName = "abstractentity_seq", allocationSize = 1)
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "abstractentity_seq")
-    private int id;
+    private Integer id;
 
     @NotBlank(message="Name field cannot be blank! Please try again.")
     @Size(max=128)

@@ -57,7 +57,7 @@ public class EmployerController
     public String index(Model model)
     {
         model.addAttribute("title", "All Employers?");
-        model.addAttribute("jobs", employerRepository.findAll());
+        //model.addAttribute("jobs", employerRepository.findAll());
         model.addAttribute("employers", employerRepository.findAll());
         return "employers/index";
     }
